@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+
+    "name": "Honey-g on Steroids",
+    "description": "This extension will make your Honey-g experience even better.",
+    "version": "1.0",
+
+    "icons": {
+        "16": "ico/icon16.png",
+        "48": "ico/icon48.png",
+        "128": "ico/icon128.png"
+    },
+
+    "permissions": [
+        "storage",
+        "https://api.github.com/",
+        "http://honey-g/BranchBuilder/"
+    ],
+
+    "options_page": "html/options.html",
+
+    "content_scripts": [
+        {
+            "matches": ["http://honey-g/BranchBuilder/"],
+            "css": ["css/style.css"],
+            "js": [
+                "lib/jquery.min.js",
+                "js/sugarcrm/merged.js",
+                "js/main.js"
+            ]
+        }
+    ],
+
+    "update_url": "http://github.open-war.com/honey-g-extension/updates.xml"
+}
